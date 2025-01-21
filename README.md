@@ -32,6 +32,9 @@ Este projeto é uma aplicação simples desenvolvida em Java que utiliza os conc
     - Gerencia o login e o total de vídeos assistidos.
     - Sobrescreve métodos abstratos da classe `Pessoa`.
 
+5. **`Visualizacao` (Classe)**
+    - vai fazer o relacionamento entras as classes "Video" e "User"
+
 ## 🛠️ Tecnologias Utilizadas
 - **Linguagem**: Java
 - **Paradigma**: Programação Orientada a Objetos (POO)

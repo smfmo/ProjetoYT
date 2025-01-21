@@ -3,7 +3,25 @@ public abstract class Pessoa {
     protected String nome;
     protected int idade;
     protected String sexo;
-    protected int experiecnia;
+    protected int experiencia;
+
+    //construtor
+    public Pessoa(String nome, int idade, String sexo, int experiencia) {
+        this.nome = nome;
+        this.idade = idade;
+        this.sexo = sexo;
+        this.experiencia = 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Pessoa{\n " +
+                "nome='" + nome + '\'' +
+                "\n idade=" + idade +
+                "\n sexo='" + sexo + '\'' +
+                "\n experiencia=" + experiencia +
+                '}';
+    }
 
     //método
     public abstract void ganharExp();
@@ -34,11 +52,11 @@ public abstract class Pessoa {
         this.sexo = sexo;
     }
 
-    public int getExperiecnia() {
-        return experiecnia;
+    public int getExperiencia() {
+        return experiencia;
     }
 
-    public void setExperiecnia(int experiecnia) {
-        this.experiecnia = experiecnia;
+    public void setExperiencia(int experiencia) {
+        this.experiencia = experiencia;
     }
 }

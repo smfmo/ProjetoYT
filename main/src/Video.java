@@ -1,25 +1,33 @@
 public class Video implements AcoesVideo{
     //atributos
     private String titulo;
-    private String avaliacao;
+    private int avaliacao;
     private int views;
     private int curtidas;
     private boolean reproduzindo;
 
+    //método construtor
+    public Video(String titulo) {
+        this.titulo = titulo;
+        this.avaliacao = 1;
+        this.views = 0;
+        this.curtidas = 0;
+    }
+
     //sobrescrevendo os métodos da interface
     @Override
     public void play() {
-
+        this.reproduzindo = true;
     }
 
     @Override
     public void pause() {
-
+        this.reproduzindo = false;
     }
 
     @Override
     public void like() {
-
+        this.setCurtidas(getCurtidas() + 1);
     }
 
     //métodos acessores
@@ -31,12 +39,14 @@ public class Video implements AcoesVideo{
         this.titulo = titulo;
     }
 
-    public String getAvaliacao() {
+    public int getAvaliacao() {
         return avaliacao;
     }
 
-    public void setAvaliacao(String avaliacao) {
-        this.avaliacao = avaliacao;
+    public void setAvaliacao(int avaliacao) {
+        int nova;
+        nova = (int) ((this.avaliacao + avaliacao)/this.views);
+        this.avaliacao = nova;
     }
 
     public int getViews() {
@@ -61,5 +71,16 @@ public class Video implements AcoesVideo{
 
     public void setReproduzindo(boolean reproduzindo) {
         this.reproduzindo = reproduzindo;
+    }
+
+    @Override
+    public String toString() {
+        return "Video{\n" +
+                "titulo='" + titulo + '\'' +
+                "\n avaliacao=" + avaliacao +
+                "\n views=" + views +
+                "\n curtidas=" + curtidas +
+                "\n reproduzindo=" + reproduzindo +
+                '}';
     }
 }
